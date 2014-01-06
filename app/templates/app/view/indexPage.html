@@ -1,0 +1,20 @@
+<template>
+    <p>What's your name?</p>
+    <input type="text" pseudo="x-name" bind="
+        is: 'jidejs/ui/control/TextField',
+        on: {
+          action: sayHello.bind($item)
+        }
+    ">
+    <button bind="
+        is: 'jidejs/ui/control/Button',
+        on: {
+          click: sayHello.bind($item)
+        }
+    " text="Say 'Hello'"></button>
+    <div pseudo="x-outputarea">
+        <div pseudo="x-output" bind="is: 'jidejs/ui/control/Label'">
+            <template bind="text: component.text"></template>
+        </div>
+    </div>
+</template>

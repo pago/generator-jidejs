@@ -1,0 +1,10 @@
+{
+  "name": "<%= _.slugify(appName) %>",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+      "jidejs": "https://github.com/jidesoft/jidejs.git#dev",
+      "requirejs": "~2.1.6",
+      "requirejs-text": "~2.0.6"
+  }
+}

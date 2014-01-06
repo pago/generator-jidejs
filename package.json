@@ -1,0 +1,43 @@
+{
+  "name": "generator-jidejs",
+  "version": "0.1.0",
+  "description": "A jide.js generator for Yeoman which creates a small sample jide.js application.",
+  "keywords": [
+    "yeoman-generator",
+    "jidejs",
+    "jide"
+  ],
+  "homepage": "https://github.com/pago/generator-jidejs",
+  "bugs": "https://github.com/pago/generator-jidejs/issues",
+  "author": {
+    "name": "Patrick Gotthardt",
+    "email": "patrick@pagosoft.com",
+    "url": "https://github.com/pago"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pago/generator-jidejs.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - '0.8'
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-jidejs' ]; then cd .. && eval "mv $currentfolder generator-jidejs" && cd generator-jidejs; fi
+
