@@ -27,20 +27,45 @@ JidejsGenerator.prototype.askFor = function askFor() {
     name: 'appName',
     message: 'What name would you like to give your application?',
     default: 'myapp'
-  },
-  {
-    type: 'confirm',
-    name: 'useEventBus',
-    message: 'Would you like to use an event bus to centralize application events?',
-    default: false
   }];
 
   this.prompt(prompts, function (props) {
     this.appName = props.appName;
-    this.useEventBus = props.useEventBus;
 
     cb();
   }.bind(this));
+};
+
+JidejsGenerator.prototype.pickDepTool = function pickDepTool() {
+  this.useBower = true;
+  this.useNPM = false;
+  // this.prompt({
+  //   type: 'confirm',
+  //   name: 'useAMD',
+  //   message: 'Would you like to use Bower and require.js? If not, I will continue with npm and Browserify.',
+  //   default: true
+  // }, function (props) {
+  //   this.useBower = props.useBower;
+  //   this.useNPM = !this.useBower;
+
+  //   cb();
+  // }.bind(this));
+};
+
+JidejsGenerator.prototype.pickBuildTool = function pickDepTool() {
+  this.useGulp = false;
+  this.useGrunt = true;
+  // this.prompt({
+  //   type: 'confirm',
+  //   name: 'useGulp',
+  //   message: 'Would you like to use gulp.js? If not, I will continue with Grunt.js.',
+  //   default: true
+  // }, function (props) {
+  //   this.useGulp = props.useGulp;
+  //   this.useGrunt = !this.useGulp;
+
+  //   cb();
+  // }.bind(this));
 };
 
 JidejsGenerator.prototype.app = function app() {
@@ -50,8 +75,14 @@ JidejsGenerator.prototype.app = function app() {
   this.mkdir('style');
 
   this.template('_package.json', 'package.json');
-  this.template('_bower.json', 'bower.json');
-  this.template('_Gruntfile.js', 'Gruntfile.js');
+  if(this.useBower) {
+    this.template('_bower.json', 'bower.json');
+  }
+  if(this.useGrunt) {
+    this.template('_Gruntfile.js', 'Gruntfile.js');
+  } else {
+    this.template('_gulpfile.js', 'gulpfile.js');
+  }
 
   this.template('_index.html', 'index.html');
   this.template('app/main.js', 'app/main.js');

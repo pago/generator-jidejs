@@ -3,7 +3,7 @@ require.config({
     "baseUrl": '.',
     "packages": [{
         name: 'jidejs',
-        location: './bower_components/jidejs/jidejs'
+        location: './bower_components/jidejs'
     }, {
         name: 'app',
         location: './app'
