@@ -1,6 +1,6 @@
 {
   "name": "generator-jidejs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A jide.js generator for Yeoman which creates a small sample jide.js application.",
   "keywords": [
     "yeoman-generator",
